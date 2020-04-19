@@ -5,17 +5,18 @@ import React, { Component } from 'react';
 class LeaveApplicationForm extends Component {
 
   render() {
+
     return (
       <div className="jumbotron">
         <form>
           <div className="form-row">
             <div className="form-group col-md-6">
               <label>From Date</label>
-              <input type="email" className="form-control" placeholder="Start Date"/>
+              <input type="date" className="form-control" placeholder="Start Date"/>
             </div>
             <div className="form-group col-md-6">
-              <label for="inputPassword4">To Date</label>
-              <input type="password" className="form-control" placeholder="End Date"/>
+              <label>To Date</label>
+              <input type="date" className="form-control" placeholder="End Date"/>
             </div>
           </div>
           <div className="form-row">
@@ -25,20 +26,22 @@ class LeaveApplicationForm extends Component {
           </div>
           </div>
           <div className="form-row">
-            <div className="form-group col-md-12">
-            <div className="dropdown">
-              <button className="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Leave Type: 
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
+            <div className="form-group col-md-6">
+              <div className="dropdown">
+                <button className="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+                  Leave Type
+                &nbsp;<span className="caret"></span>
+                </button>
+                <button type="submit" className="btn btn-primary pull-right">Submit</button>
+                <ul className="dropdown-menu">
+                  <li><a className="dropdown-item" href="#">Sick</a> </li>
+                  <li><a className="dropdown-item" href="#">Casual</a></li>
+                  <li><a className="dropdown-item" href="#">Other</a></li>
+                </ul>
               </div>
             </div>
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+
         </form>
       </div>
     );
