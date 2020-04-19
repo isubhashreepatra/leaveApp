@@ -1,5 +1,8 @@
 import { Meteor } from 'meteor/meteor';
+import Leaves from '../imports/collections/leaves';
 
 Meteor.startup(() => {
-  // code to run on server at startup
+  // Meteor.publish('leaves', function(){
+  //   return Leaves.find({}) ;
+  // });
 });
