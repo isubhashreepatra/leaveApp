@@ -1,10 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 
 Meteor.methods({
-
     'insert.leaves' : function (leave) {
-        console.log('trying to insert into DB', leave);
-
         return Leaves.insert({
             createdAt: new Date(),
             startDate: leave.startDate,
@@ -12,12 +9,15 @@ Meteor.methods({
             reason: leave.reason,
             leaveType: leave.leaveType,
             status: "pending",
-            employeeId: null
+            employeeId: leave.employeeId,
+            employeeName: leave.employeeName
         });
+    },
+
+    'remove.leave' : function (leave) {
+      return Leaves.remove(leave);
     }
-
-
 });
 
 
-export default Leaves = new Mongo.Collection('leaves');
+export const Leaves = new Mongo.Collection('leaves');

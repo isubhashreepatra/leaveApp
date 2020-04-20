@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { withTracker } from 'meteor/react-meteor-data';
 
-//render form
 class LeaveApplicationForm extends Component {
   handleSubmitEvent(event) {
     event.preventDefault();
@@ -10,10 +8,11 @@ class LeaveApplicationForm extends Component {
     var reason = this.refs.reason.value;
     var selectedOption = this.refs.leaveType;
     var leaveType = selectedOption.options[selectedOption.selectedIndex].value;
+    var employeeId = Meteor.userId();
+    var employeeName = Meteor.user().username;
+    var leaveInput = {startDate, endDate, reason, leaveType, employeeId, employeeName};
 
-    var leave = {startDate, endDate, reason, leaveType}
-
-    Meteor.call('insert.leaves', leave, (error) => {
+    Meteor.call('insert.leaves', leaveInput, (error) => {
       if(error) {
         console.log(error);
         return;
@@ -21,12 +20,9 @@ class LeaveApplicationForm extends Component {
         console.log('Insert successful');
       }
     });
-
-
   };
 
   render() {
-
     return (
       <div className="jumbotron">
         <form >
@@ -56,8 +52,7 @@ class LeaveApplicationForm extends Component {
               </select>
             </div>
             </div>
-
-          <div className="float-right"><button type="submit" className="btn btn-primary" onClick={ this.handleSubmitEvent.bind(this) }>Submit</button></div>
+            <button type="submit" className="btn btn-primary" onClick={ this.handleSubmitEvent.bind(this) }>Submit</button>
         </form>
       </div>
     );
