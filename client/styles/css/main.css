@@ -182,24 +182,35 @@ iframe {
 /*------------------------------------------------------------------
 [ Form ]*/
 
+.profile-title{
+  display: block;
+  font-family: Poppins-Regular;
+  font-size: 20px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: left;
+  font-weight:600;
+}
+
 .login100-form {
-  width: 100%;
+  width: auto;
 }
 
 .login100-form-title {
   display: block;
-  font-family: Poppins-Bold;
-  font-size: 39px;
+  font-family: Poppins-Regular;
+  font-size: 30px;
   color: #333333;
   line-height: 1.2;
   text-align: center;
+  font-weight:600;
 }
 
 .login100-form-avatar {
   display: block;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  width: 105px;
+  height: 105px;
+  border-radius: 5%;
   overflow: hidden;
   margin: 0 auto;
 }
@@ -315,8 +326,8 @@ iframe {
   font-size: 16px;
   color: #fff;
   line-height: 1.2;
-  text-transform: uppercase;
-
+  font-weight: bold;
+  letter-spacing: 0.8px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -425,12 +436,13 @@ iframe {
 
 /*//////////////////////////////////////////////////////////////////
 [ Login more ]*/
-.login-more li {
+.login-more{
   position: relative;
   padding-left: 16px;
+  text-align: center;
 }
 
-.login-more li::before {
+.login-more::before {
   content: "";
   display: block;
   position: absolute;
@@ -445,4 +457,5 @@ iframe {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
   left: 0;
+  text-align: center;
 }

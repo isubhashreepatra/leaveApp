@@ -29,17 +29,17 @@ class LeaveApplicationForm extends Component {
           <div className="form-row">
             <div className="form-group col-md-6">
               <label>From Date</label>
-              <input ref="startDate" type="date" className="form-control" placeholder="Start Date"/>
+              <input ref="startDate" type="date" className="form-control"/>
             </div>
             <div className="form-group col-md-6">
               <label>To Date</label>
-              <input ref="endDate" type="date" className="form-control" placeholder="End Date"/>
+              <input ref="endDate" type="date" className="form-control"/>
             </div>
           </div>
           <div className="form-row">
           <div className="form-group col-md-6">
             <label>Reason</label>
-            <input ref="reason" type="text" className="form-control" id="inputAddress" placeholder="1234 Main St"/>
+            <input ref="reason" type="text" className="form-control"/>
           </div>
           </div>
           <div className="form-row">

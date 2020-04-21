@@ -12,12 +12,13 @@ import Register from './components/register';
 
 const routes = (
    <Router>
-        <Route component={App} />
-        <Switch>
+    <Route component={App} />
+      <Switch>
           <Route path="/apply" component={LeaveApplicationForm} />
           <Route path="/status" component={LeavesList} />
+          <Route path='/login' component={Login} />
+          <Route path='/register' component={Register} />
         </Switch>
-        <Route path='/register' component={Register} />
    </Router>
 );
 
